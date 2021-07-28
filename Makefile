@@ -1,4 +1,3 @@
-LIB_LIB=/usr/local/lib/
 FLAGS = 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
