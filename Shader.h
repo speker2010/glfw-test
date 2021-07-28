@@ -23,7 +23,7 @@ class Shader
             vShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
             fShaderFile.exceptions (std::ifstream::failbit | std::ifstream::badbit);
 
-            try {
+
                 vShaderFile.open(vertexPath);
                 fShaderFile.open(fragmentPath);
                 std::stringstream vShaderStream, fShaderStream;
@@ -33,9 +33,6 @@ class Shader
                 fShaderFile.close();
                 vertexCode = vShaderStream.str();
                 fragmentCode = fShaderStream.str();
-            } catch (std::ifstream::failure e) {
-                std::cout << "Error::shader::file_not_succesfully_read" << std::endl;
-            }
 
             const char* vShaderCode = vertexCode.c_str();
             const char* fShaderCode = fragmentCode.c_str();
