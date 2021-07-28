@@ -48,7 +48,9 @@ int main(void) {
         fprintf(stderr, "Failed to initialize GLAD");
         return -1;
     }
-    glViewport(0, 0, 800, 600);
+    int viewportWidth, viewportHeight;
+    glfwGetFramebufferSize(window, &viewportWidth, &viewportHeight);
+    glViewport(0, 0, viewportWidth, viewportHeight);
 
     Shader ourShader("shaders/first.vs", "shaders/first.fs");
 
